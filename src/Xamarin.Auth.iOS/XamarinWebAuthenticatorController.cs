@@ -18,14 +18,14 @@ using System.Threading.Tasks;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
 using Xamarin.Utilities.iOS;
-using Xamarin.Auth.iOS;
+using Xamarin.Auth;
 
 namespace Xamarin.Auth
 {
 	/// <summary>
 	/// The ViewController that the WebAuthenticator presents to the user.
 	/// </summary>
-	internal class WebAuthenticatorController : UIViewController
+    internal class XamarinWebAuthenticatorController : UIViewController
 	{
 		protected WebAuthenticator authenticator;
 
@@ -39,7 +39,7 @@ namespace Xamarin.Auth
 
 		bool keepTryingAfterError = true;
 
-		public WebAuthenticatorController (WebAuthenticator authenticator)
+		public XamarinWebAuthenticatorController (WebAuthenticator authenticator)
 		{
 			this.authenticator = authenticator;
 
@@ -174,10 +174,10 @@ namespace Xamarin.Auth
 
 		protected class WebViewDelegate : UIWebViewDelegate
 		{
-			protected WebAuthenticatorController controller;
+			protected XamarinWebAuthenticatorController controller;
 			Uri lastUrl;
 
-			public WebViewDelegate (WebAuthenticatorController controller)
+			public WebViewDelegate (XamarinWebAuthenticatorController controller)
 			{
 				this.controller = controller;
 			}

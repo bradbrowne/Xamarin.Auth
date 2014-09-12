@@ -21,12 +21,12 @@ using System.Threading.Tasks;
 using System.Threading;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
-using Xamarin.Auth.iOS;
+using Xamarin.Auth;
 using Xamarin.Utilities.iOS;
 
 namespace Xamarin.Auth
 {
-	internal class FormAuthenticatorController : UITableViewController
+	internal class XamarinFormAuthenticatorController : UITableViewController
 	{
 		FormAuthenticator authenticator;
 
@@ -34,7 +34,7 @@ namespace Xamarin.Auth
 
 		CancellationTokenSource cancelSource;
 
-		public FormAuthenticatorController (FormAuthenticator authenticator)
+		public XamarinFormAuthenticatorController (FormAuthenticator authenticator)
 			: base (UITableViewStyle.Grouped)
 		{
 			this.authenticator = authenticator;
@@ -89,9 +89,9 @@ namespace Xamarin.Auth
 
 		class FormDelegate : UITableViewDelegate
 		{
-			FormAuthenticatorController controller;
+			XamarinFormAuthenticatorController controller;
 
-			public FormDelegate (FormAuthenticatorController controller)
+			public FormDelegate (XamarinFormAuthenticatorController controller)
 			{
 				this.controller = controller;
 			}
@@ -172,9 +172,9 @@ namespace Xamarin.Auth
 
 		class FormDataSource : UITableViewDataSource
 		{
-			FormAuthenticatorController controller;
+			XamarinFormAuthenticatorController controller;
 
-			public FormDataSource (FormAuthenticatorController controller)
+			public FormDataSource (XamarinFormAuthenticatorController controller)
 			{
 				this.controller = controller;
 			}
