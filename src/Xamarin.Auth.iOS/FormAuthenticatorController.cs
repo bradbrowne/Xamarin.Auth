@@ -21,7 +21,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
-using Xamarin.Controls;
+using Xamarin.Auth.iOS;
 using Xamarin.Utilities.iOS;
 
 namespace Xamarin.Auth

@@ -2,7 +2,7 @@ using System;
 using MonoTouch.UIKit;
 using System.Drawing;
 
-namespace Xamarin.Controls
+namespace Xamarin.Auth.iOS
 {
 	internal class ProgressLabel : UIView
 	{
