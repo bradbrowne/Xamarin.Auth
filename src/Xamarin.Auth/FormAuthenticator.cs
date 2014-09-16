@@ -103,7 +103,7 @@ namespace Xamarin.Auth
 		/// </returns>
 		protected override AuthenticateUIType GetPlatformUI ()
 		{
-			return new MonoTouch.UIKit.UINavigationController (new XamarinFormAuthenticatorController (this));
+			return new MonoTouch.UIKit.UINavigationController (new XamFormAuthenticatorController (this));
 		}
 #elif PLATFORM_ANDROID
 		/// <summary>
@@ -114,11 +114,11 @@ namespace Xamarin.Auth
 		/// </returns>
 		protected override AuthenticateUIType GetPlatformUI (UIContext context)
 		{
-			var i = new global::Android.Content.Intent (context, typeof (FormAuthenticatorActivity));
-			var state = new FormAuthenticatorActivity.State {
+			var i = new global::Android.Content.Intent (context, typeof (XamFormAuthenticatorActivity));
+			var state = new XamFormAuthenticatorActivity.State {
 				Authenticator = this,
 			};
-			i.PutExtra ("StateKey", FormAuthenticatorActivity.StateRepo.Add (state));
+			i.PutExtra ("StateKey", XamFormAuthenticatorActivity.StateRepo.Add (state));
 			return i;
 		}
 #else

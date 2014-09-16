@@ -122,7 +122,7 @@ namespace Xamarin.Auth
 		/// </returns>
 		protected override AuthenticateUIType GetPlatformUI ()
 		{
-			return new MonoTouch.UIKit.UINavigationController (new XamarinWebAuthenticatorController (this));
+			return new MonoTouch.UIKit.UINavigationController (new XamWebAuthenticatorController (this));
 		}
 #elif PLATFORM_ANDROID
 		/// <summary>
@@ -133,12 +133,12 @@ namespace Xamarin.Auth
 		/// </returns>
 		protected override AuthenticateUIType GetPlatformUI (UIContext context)
 		{
-			var i = new global::Android.Content.Intent (context, typeof (WebAuthenticatorActivity));
+			var i = new global::Android.Content.Intent (context, typeof (XamWebAuthenticatorActivity));
 			i.PutExtra ("ClearCookies", ClearCookiesBeforeLogin);
-			var state = new WebAuthenticatorActivity.State {
+			var state = new XamWebAuthenticatorActivity.State {
 				Authenticator = this,
 			};
-			i.PutExtra ("StateKey", WebAuthenticatorActivity.StateRepo.Add (state));
+			i.PutExtra ("StateKey", XamWebAuthenticatorActivity.StateRepo.Add (state));
 			return i;
 		}
 #else

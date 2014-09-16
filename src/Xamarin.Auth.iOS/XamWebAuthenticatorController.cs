@@ -25,7 +25,7 @@ namespace Xamarin.Auth
 	/// <summary>
 	/// The ViewController that the WebAuthenticator presents to the user.
 	/// </summary>
-    internal class XamarinWebAuthenticatorController : UIViewController
+    internal class XamWebAuthenticatorController : UIViewController
 	{
 		protected WebAuthenticator authenticator;
 
@@ -39,7 +39,7 @@ namespace Xamarin.Auth
 
 		bool keepTryingAfterError = true;
 
-		public XamarinWebAuthenticatorController (WebAuthenticator authenticator)
+		public XamWebAuthenticatorController (WebAuthenticator authenticator)
 		{
 			this.authenticator = authenticator;
 
@@ -174,10 +174,10 @@ namespace Xamarin.Auth
 
 		protected class WebViewDelegate : UIWebViewDelegate
 		{
-			protected XamarinWebAuthenticatorController controller;
+			protected XamWebAuthenticatorController controller;
 			Uri lastUrl;
 
-			public WebViewDelegate (XamarinWebAuthenticatorController controller)
+			public WebViewDelegate (XamWebAuthenticatorController controller)
 			{
 				this.controller = controller;
 			}

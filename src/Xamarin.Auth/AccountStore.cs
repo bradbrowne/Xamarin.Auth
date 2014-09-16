@@ -43,7 +43,7 @@ namespace Xamarin.Auth
 		/// </summary>
 		public static AccountStore Create (Android.Content.Context context)
 		{
-			return new AndroidAccountStore (context);
+			return new XamAndroidAccountStore (context);
 		}
 #else
 		/// <summary>

@@ -26,7 +26,7 @@ using Xamarin.Utilities.iOS;
 
 namespace Xamarin.Auth
 {
-	internal class XamarinFormAuthenticatorController : UITableViewController
+	internal class XamFormAuthenticatorController : UITableViewController
 	{
 		FormAuthenticator authenticator;
 
@@ -34,7 +34,7 @@ namespace Xamarin.Auth
 
 		CancellationTokenSource cancelSource;
 
-		public XamarinFormAuthenticatorController (FormAuthenticator authenticator)
+		public XamFormAuthenticatorController (FormAuthenticator authenticator)
 			: base (UITableViewStyle.Grouped)
 		{
 			this.authenticator = authenticator;
@@ -89,9 +89,9 @@ namespace Xamarin.Auth
 
 		class FormDelegate : UITableViewDelegate
 		{
-			XamarinFormAuthenticatorController controller;
+			XamFormAuthenticatorController controller;
 
-			public FormDelegate (XamarinFormAuthenticatorController controller)
+			public FormDelegate (XamFormAuthenticatorController controller)
 			{
 				this.controller = controller;
 			}
@@ -172,9 +172,9 @@ namespace Xamarin.Auth
 
 		class FormDataSource : UITableViewDataSource
 		{
-			XamarinFormAuthenticatorController controller;
+			XamFormAuthenticatorController controller;
 
-			public FormDataSource (XamarinFormAuthenticatorController controller)
+			public FormDataSource (XamFormAuthenticatorController controller)
 			{
 				this.controller = controller;
 			}

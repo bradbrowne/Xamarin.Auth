@@ -29,9 +29,9 @@ namespace Xamarin.Auth
 {
 	[Activity (Label = "Web Authenticator")]
 #if XAMARIN_AUTH_INTERNAL
-	internal class FormAuthenticatorActivity : Activity
+	internal class XamFormAuthenticatorActivity : Activity
 #else
-	public class FormAuthenticatorActivity : Activity
+	public class XamFormAuthenticatorActivity : Activity
 #endif
 	{
 		Button signIn;
